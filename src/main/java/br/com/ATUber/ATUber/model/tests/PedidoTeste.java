@@ -31,8 +31,8 @@ public class PedidoTeste {
             pedido = new Pedido(solicitante, driver, produto);
             pedido.fecharPedido();
             System.out.println(pedido.toString());
-        } catch (PedidoSemSolicitanteException | PedidoSemDriverException | ProdutoSemOrigemDestinoException | SolicitantePreenchimentoIncompletoException | PedidoSemProdutoException var14) {
-            System.out.println(var14.getMessage());
+        } catch (PedidoSemSolicitanteException | PedidoSemDriverException | ProdutoSemOrigemDestinoException | SolicitantePreenchimentoIncompletoException | PedidoSemProdutoException e) {
+            System.out.println(e.getMessage());
         }
 
         System.out.println("--------------");
@@ -56,8 +56,8 @@ public class PedidoTeste {
             pedido = new Pedido(solicitante, driver, produtoCorrespondencia2);
             pedido.fecharPedido();
             System.out.println(pedido.toString());
-        } catch (PedidoSemSolicitanteException | PedidoSemDriverException | ProdutoSemOrigemDestinoException | CorrespondenciaPreenchimentoIncompletoException | SolicitantePreenchimentoIncompletoException | PedidoSemProdutoException var12) {
-            System.out.println(var12.getMessage());
+        } catch (PedidoSemSolicitanteException | PedidoSemDriverException | ProdutoSemOrigemDestinoException | CorrespondenciaPreenchimentoIncompletoException | SolicitantePreenchimentoIncompletoException | PedidoSemProdutoException e) {
+            System.out.println(e.getMessage());
         }
 
         System.out.println("--------------");
@@ -68,8 +68,8 @@ public class PedidoTeste {
             pedido = new Pedido(solicitante, driver, produtoCorrespondencia2);
             pedido.fecharPedido();
             System.out.println(pedido.toString());
-        } catch (PedidoSemSolicitanteException | PedidoSemDriverException | ProdutoSemOrigemDestinoException | CorrespondenciaPreenchimentoIncompletoException | SolicitantePreenchimentoIncompletoException | PedidoSemProdutoException var11) {
-            System.out.println(var11.getMessage());
+        } catch (PedidoSemSolicitanteException | PedidoSemDriverException | ProdutoSemOrigemDestinoException | CorrespondenciaPreenchimentoIncompletoException | SolicitantePreenchimentoIncompletoException | PedidoSemProdutoException e) {
+            System.out.println(e.getMessage());
         }
 
         System.out.println("--------------");
@@ -81,8 +81,8 @@ public class PedidoTeste {
             pedido = new Pedido(solicitante, driver, produto2);
             pedido.fecharPedido();
             System.out.println(pedido.toString());
-        } catch (PedidoSemSolicitanteException | PedidoSemDriverException | ProdutoSemOrigemDestinoException | EatsPreenchimentoIncompletoException | SolicitantePreenchimentoIncompletoException | PedidoSemProdutoException var10) {
-            System.out.println(var10.getMessage());
+        } catch (PedidoSemSolicitanteException | PedidoSemDriverException | ProdutoSemOrigemDestinoException | EatsPreenchimentoIncompletoException | SolicitantePreenchimentoIncompletoException | PedidoSemProdutoException e) {
+            System.out.println(e.getMessage());
         }
 
         System.out.println("--------------");
@@ -93,8 +93,8 @@ public class PedidoTeste {
             pedido = new Pedido(solicitante, driver, produto3);
             pedido.fecharPedido();
             System.out.println(pedido.toString());
-        } catch (PedidoSemSolicitanteException | PedidoSemDriverException | ProdutoSemOrigemDestinoException | EatsPreenchimentoIncompletoException | SolicitantePreenchimentoIncompletoException | PedidoSemProdutoException var9) {
-            System.out.println(var9.getMessage());
+        } catch (PedidoSemSolicitanteException | PedidoSemDriverException | ProdutoSemOrigemDestinoException | EatsPreenchimentoIncompletoException | SolicitantePreenchimentoIncompletoException | PedidoSemProdutoException e) {
+            System.out.println(e.getMessage());
         }
 
         System.out.println("--------------");
@@ -107,8 +107,8 @@ public class PedidoTeste {
             Pedido p7 = new Pedido(solicitante, driver, (Produto)null);
             p7.fecharPedido();
             System.out.println(p7.toString());
-        } catch (PedidoSemSolicitanteException | PedidoSemDriverException | SolicitantePreenchimentoIncompletoException | PedidoSemProdutoException var8) {
-            System.out.println("Erro: " + var8.getMessage());
+        } catch (PedidoSemSolicitanteException | PedidoSemDriverException | SolicitantePreenchimentoIncompletoException | PedidoSemProdutoException e) {
+            System.out.println("Erro: " + e.getMessage());
         }
 
         System.out.println("--------------");
@@ -120,8 +120,8 @@ public class PedidoTeste {
             pedido = new Pedido(solicitante, driver, (Produto)null);
             pedido.fecharPedido();
             System.out.println(pedido.toString());
-        } catch (PedidoSemSolicitanteException | PedidoSemDriverException | ProdutoSemOrigemDestinoException | SolicitantePreenchimentoIncompletoException | CorrespondenciaPreenchimentoIncompletoException | PedidoSemProdutoException var7) {
-            System.out.println("Erro: " + var7.getMessage());
+        } catch (PedidoSemSolicitanteException | PedidoSemDriverException | ProdutoSemOrigemDestinoException | SolicitantePreenchimentoIncompletoException | CorrespondenciaPreenchimentoIncompletoException | PedidoSemProdutoException e) {
+            System.out.println("Erro: " + e.getMessage());
         }
 
         System.out.println("--------------");
@@ -133,8 +133,8 @@ public class PedidoTeste {
             pedido = new Pedido(solicitante, driver, produto4);
             pedido.fecharPedido();
             System.out.println(pedido.toString());
-        } catch (PedidoSemSolicitanteException | PedidoSemDriverException | SolicitantePreenchimentoIncompletoException | ProdutoSemOrigemDestinoException | PedidoSemProdutoException var6) {
-            System.out.println("Erro: " + var6.getMessage());
+        } catch (PedidoSemSolicitanteException | PedidoSemDriverException | SolicitantePreenchimentoIncompletoException | ProdutoSemOrigemDestinoException | PedidoSemProdutoException e) {
+            System.out.println("Erro: " + e.getMessage());
         }
 
         System.out.println("--------------");
@@ -146,8 +146,8 @@ public class PedidoTeste {
             pedido = new Pedido(solicitante, driver, produto5);
             pedido.fecharPedido();
             System.out.println(pedido.toString());
-        } catch (PedidoSemSolicitanteException | PedidoSemDriverException | ProdutoSemOrigemDestinoException | SolicitantePreenchimentoIncompletoException | EatsPreenchimentoIncompletoException | PedidoSemProdutoException var5) {
-            System.out.println("Erro: " + var5.getMessage());
+        } catch (PedidoSemSolicitanteException | PedidoSemDriverException | ProdutoSemOrigemDestinoException | SolicitantePreenchimentoIncompletoException | EatsPreenchimentoIncompletoException | PedidoSemProdutoException e) {
+            System.out.println("Erro: " + e.getMessage());
         }
 
         System.out.println("--------------");

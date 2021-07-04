@@ -30,51 +30,35 @@ public class AppTeste {
     public static void main(String[] args) throws IOException {
         try {
             String dir = System.getProperty("user.dir");
-            LocalDateTime var10000 = LocalDateTime.now();
-            String arq = var10000.format(DateTimeFormatter.ofPattern("yyyyMMddHHmmss")) + ".txt";
+            String arq = LocalDateTime.now().format(DateTimeFormatter.ofPattern("yyyyMMddHHmmss")) + ".txt";
+
             InputStream resource = (new ClassPathResource("static/pedidos.txt")).getInputStream();
             FileWriter fileW = new FileWriter(dir + arq);
             BufferedWriter escrita = new BufferedWriter(fileW);
             BufferedReader leitura = new BufferedReader(new InputStreamReader(resource));
+
             DateTimeFormatter formatter = DateTimeFormatter.ofPattern("dd/MM/yyyy HH:mm");
+            String linha = leitura.readLine();
 
-            for(String linha = leitura.readLine(); linha != null; linha = leitura.readLine()) {
+            while (linha != null) {
                 String[] campos = linha.split(";");
-                String var10 = campos[0];
-                byte var11 = -1;
-                switch(var10.hashCode()) {
-                    case -1675145382:
-                        if (var10.equals("Corrida")) {
-                            var11 = 1;
-                        }
-                        break;
-                    case -433324957:
-                        if (var10.equals("Correspondencia")) {
-                            var11 = 0;
-                        }
-                        break;
-                    case 2152507:
-                        if (var10.equals("Eats")) {
-                            var11 = 2;
-                        }
-                }
 
-                switch(var11) {
-                    case 0:
+                switch(campos[0]) {
+                    case "Correspondencia":
                         Correspondencia correspondencia = new Correspondencia(Float.valueOf(campos[1]), Float.valueOf(campos[2]), Float.valueOf(campos[3]), Float.valueOf(campos[4]), campos[5], campos[6]);
                         Solicitante solicitante = new Solicitante(campos[7], campos[8], campos[9]);
                         Driver driver = new Driver(campos[10], campos[11], campos[12]);
                         Pedido pedido = new Pedido(solicitante, driver, correspondencia, LocalDateTime.parse(campos[13], formatter));
                         escrita.write(pedido.fecharPedido() + "\r\n");
                         break;
-                    case 1:
+                    case "Corrida":
                         Corrida corrida = new Corrida(campos[1], campos[2]);
                         Solicitante solicitante2 = new Solicitante(campos[3], campos[4], campos[5]);
                         Driver driver2 = new Driver(campos[6], campos[7], campos[8]);
                         Pedido pedido2 = new Pedido(solicitante2, driver2, corrida, LocalDateTime.parse(campos[9], formatter));
                         escrita.write(pedido2.fecharPedido() + "\r\n");
                         break;
-                    case 2:
+                    case "Eats":
                         Eats eats = new Eats(Float.valueOf(campos[1]), Integer.valueOf(campos[2]), campos[3], campos[4]);
                         Solicitante solicitante3 = new Solicitante(campos[5], campos[6], campos[7]);
                         Driver driver3 = new Driver(campos[8], campos[9], campos[10]);
@@ -89,16 +73,10 @@ public class AppTeste {
             leitura.close();
             escrita.close();
             fileW.close();
-        } catch (CorrespondenciaPreenchimentoIncompletoException | SolicitantePreenchimentoIncompletoException | ProdutoSemOrigemDestinoException var24) {
-            var24.printStackTrace();
-        } catch (PedidoSemProdutoException var25) {
-            var25.printStackTrace();
-        } catch (PedidoSemDriverException var26) {
-            var26.printStackTrace();
-        } catch (PedidoSemSolicitanteException var27) {
-            var27.printStackTrace();
-        } catch (EatsPreenchimentoIncompletoException var28) {
-            var28.printStackTrace();
+        } catch (CorrespondenciaPreenchimentoIncompletoException | SolicitantePreenchimentoIncompletoException | ProdutoSemOrigemDestinoException | PedidoSemProdutoException | PedidoSemDriverException | PedidoSemSolicitanteException | EatsPreenchimentoIncompletoException e) {
+            e.getMessage();
+        } catch (Exception e) {
+            e.printStackTrace();
         }
 
     }
