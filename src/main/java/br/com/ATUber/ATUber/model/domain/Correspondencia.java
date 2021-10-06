@@ -18,8 +18,8 @@ public class Correspondencia extends Produto {
             this.largura = largura;
             this.altura = altura;
             this.profundidade = profundidade;
-            this.origem = origem;
-            this.destino = destino;
+            this.setOrigem(origem);
+            this.setDestino(destino);
         } else {
             throw new ProdutoSemOrigemDestinoException("Os campos 'Origem' e 'Destino' são obrigatórios");
         }
@@ -27,9 +27,9 @@ public class Correspondencia extends Produto {
 
     protected void CalcularValor() {
         if (this.peso < 0.8F) {
-            this.valor = 12.0F;
+            this.setValor(12.0F);
         } else {
-            this.valor = Helpers.gerarValorAleatorioProduto();
+            this.setValor(Helpers.gerarValorAleatorioProduto());
         }
 
     }

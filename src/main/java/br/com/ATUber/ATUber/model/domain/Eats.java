@@ -14,8 +14,8 @@ public class Eats extends Produto {
             if (!origem.isEmpty() && !destino.isEmpty()) {
                 this.peso = peso;
                 this.qtdItens = qtdItens;
-                this.origem = origem;
-                this.destino = destino;
+                this.setOrigem(origem);
+                this.setDestino(destino);
             } else {
                 throw new ProdutoSemOrigemDestinoException("Os campos 'Origem' e 'Destino' são obrigatórios");
             }
@@ -31,9 +31,9 @@ public class Eats extends Produto {
 
     protected void CalcularValor() {
         if (this.qtdItens > 2 && this.peso > 500.0F) {
-            this.valor = 5.0F;
+            this.setValor(5.0F);
         } else {
-            this.valor = Helpers.gerarValorAleatorioProduto(2.0F, 10.0F);
+            this.setValor(Helpers.gerarValorAleatorioProduto(2.0F, 10.0F));
         }
 
     }

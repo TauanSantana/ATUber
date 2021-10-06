@@ -60,7 +60,7 @@ public class Pedido {
         sb.append(this.driver.getNome());
         sb.append("\n Situação do pedido: ");
         sb.append(this.pedidoFechado ? "Fechado" : "Pendente");
-        sb.append(String.format("\n Valor Total: R$%.2f", this.produto.valor));
+        sb.append(String.format("\n Valor Total: R$%.2f", this.produto.getValor()));
         return sb.toString();
     }
 
@@ -79,11 +79,11 @@ public class Pedido {
             StringBuilder sb = new StringBuilder();
             sb.append(this.produto.getClass().getSimpleName());
             sb.append(";");
-            sb.append(String.format("R$%.2f", this.produto.valor));
+            sb.append(String.format("R$%.2f", this.produto.getValor()));
             sb.append(";");
-            sb.append(this.produto.origem);
+            sb.append(this.produto.getOrigem());
             sb.append(";");
-            sb.append(this.produto.destino);
+            sb.append(this.produto.getOrigem());
             sb.append(";");
             sb.append(this.solicitante.getNome());
             sb.append(";");

@@ -7,7 +7,7 @@ public class SolicitanteTeste {
     public SolicitanteTeste() {
     }
 
-    public static void main(String[] args) throws SolicitantePreenchimentoIncompletoException {
-        new Solicitante("Tauan", "tauansantana@gmail.com", "77755533311");
-    }
+//    public static void main(String[] args) throws SolicitantePreenchimentoIncompletoException {
+//        new Solicitante("Tauan", "tauansantana@gmail.com", "77755533311");
+//    }
 }

@@ -2,10 +2,50 @@ package br.com.ATUber.ATUber.model.domain;
 
 import br.com.ATUber.ATUber.model.exceptions.SolicitantePreenchimentoIncompletoException;
 
+import javax.persistence.Entity;
+import javax.persistence.GeneratedValue;
+import javax.persistence.GenerationType;
+import javax.persistence.Id;
+
+@Entity
 public class Solicitante {
+
+    @Id
+    @GeneratedValue(strategy = GenerationType.IDENTITY)
+    private Integer id;
     private String nome;
     private String email;
+
+    public void setNome(String nome) {
+        this.nome = nome;
+    }
+
+    public void setEmail(String email) {
+        this.email = email;
+    }
+
+    public void setCpf(String cpf) {
+        this.cpf = cpf;
+    }
+
     private String cpf;
+    private String senha;
+
+    public Integer getId() {
+        return id;
+    }
+
+    public void setId(Integer id) {
+        this.id = id;
+    }
+    public String getSenha() {
+        return senha;
+    }
+
+    public void setSenha(String senha) {
+        this.senha = senha;
+    }
+
 
     public String getNome() {
         return this.nome;
@@ -19,15 +59,6 @@ public class Solicitante {
         return this.cpf;
     }
 
-    public Solicitante(String nome, String email, String cpf) throws SolicitantePreenchimentoIncompletoException {
-        if (!nome.isEmpty() && !email.isEmpty() && !cpf.isEmpty()) {
-            this.nome = nome;
-            this.email = email;
-            this.cpf = cpf;
-        } else {
-            throw new SolicitantePreenchimentoIncompletoException("Os campos 'Nome', 'Email' e 'CPF' são obrigatórios");
-        }
-    }
 
     public String toString() {
         StringBuilder sb = new StringBuilder();
